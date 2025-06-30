@@ -1,0 +1,35 @@
+use std::io;
+
+fn main() {
+    let mut proton:String = String::new();
+    let mut newtron:String = String::new();
+
+    println!("Atomic Mass Calculator!");
+    println!("What is the total amount of protons?");
+
+    io::stdin()
+        .read_line(&mut proton)
+        .expect("Couldn't do that");
+
+    println!("What is the total amount of newtrons?");
+
+    io::stdin()
+        .read_line(&mut newtron)
+        .expect("Couldn't do that");
+
+    let num_proton:u32 = proton
+        .trim()
+        .parse()
+        .expect("Couldn't Parse");
+
+    let num_newtron:u32 = newtron
+        .trim()
+        .parse()
+        .expect("Couldn't Parse");
+
+    let atomic_mass = num_newtron + num_proton;
+
+    println!("The result is {}", atomic_mass);
+
+
+}
